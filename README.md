@@ -1,5 +1,10 @@
 # Optimizely Web Experimentation API Client
 
+[![npm version](https://badge.fury.io/js/optimizely-client.svg)](https://www.npmjs.com/package/optimizely-client)
+[![npm downloads](https://img.shields.io/npm/dm/optimizely-client.svg)](https://www.npmjs.com/package/optimizely-client)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/marvoey/opti-webex.svg?style=social)](https://github.com/marvoey/opti-webex)
+
 A TypeScript/JavaScript wrapper for the [Optimizely Web Experimentation REST API](https://docs.developers.optimizely.com/web-experimentation/docs/rest-api-getting-started). This client provides a simple, type-safe interface for interacting with Optimizely's API.
 
 ## Features
