@@ -15,7 +15,19 @@ export class HttpClient {
       throw new Error('Optimizely token is required');
     }
 
-    this.token = config.token;
+    // Trim whitespace and remove any surrounding quotes
+    const trimmedToken = config.token.trim().replace(/^["']|["']$/g, '');
+
+    if (!trimmedToken) {
+      throw new Error('Optimizely token cannot be empty');
+    }
+
+    // Basic validation for token format
+    if (trimmedToken.includes(' ')) {
+      throw new Error('Optimizely token contains invalid whitespace');
+    }
+
+    this.token = trimmedToken;
     this.baseUrl = config.baseUrl || 'https://api.optimizely.com/v2';
     this.timeout = config.timeout || 30000;
   }

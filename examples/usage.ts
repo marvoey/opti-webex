@@ -2,6 +2,7 @@
  * Example usage of the Optimizely Web Experimentation API Client
  */
 
+import 'dotenv/config';
 import { OptimizelyClient, OptimizelyError, AuthenticationError } from '../src';
 
 // Initialize the client
