@@ -1,5 +1,5 @@
 {
-  "name": "optimizely-client",
+  "name": "@optimarvin/opti-webex-api-client",
   "version": "1.0.0",
   "description": "TypeScript/JavaScript wrapper for the Optimizely Web Experimentation REST API",
   "main": "dist/index.js",
