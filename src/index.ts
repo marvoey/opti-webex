@@ -13,6 +13,7 @@ export type {
   Experiment,
   Variation,
   Audience,
+  Page,
   ListResponse,
   HttpMethod,
   RequestOptions,
@@ -35,3 +36,4 @@ export {
 export { Projects } from './resources/projects';
 export { Experiments } from './resources/experiments';
 export { Audiences } from './resources/audiences';
+export { Pages } from './resources/pages';

@@ -80,6 +80,23 @@ export interface Audience {
 }
 
 /**
+ * Page resource
+ */
+export interface Page {
+  id: string;
+  project_id: string;
+  name: string;
+  description?: string;
+  edit_url?: string;
+  page_type?: string;
+  category?: string;
+  conditions?: any;
+  created?: string;
+  last_modified?: string;
+  archived?: boolean;
+}
+
+/**
  * HTTP method types
  */
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';

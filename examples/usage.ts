@@ -169,7 +169,86 @@ async function createAudience(projectId: string) {
 }
 
 /**
- * Example 11: Make a custom API request
+ * Example 11: List pages for a project
+ */
+async function listPages(projectId: string) {
+  try {
+    const pages = await client.pages.list(projectId);
+    console.log('Pages:', pages);
+    return pages;
+  } catch (error) {
+    console.error('Failed to list pages:', error);
+  }
+}
+
+/**
+ * Example 12: Create a new page
+ */
+async function createPage(projectId: string) {
+  try {
+    const newPage = await client.pages.create(projectId, {
+      name: 'Homepage',
+      description: 'Main landing page',
+      edit_url: 'https://example.com/',
+      page_type: 'single_url',
+      category: 'landing',
+      conditions: {
+        type: 'url',
+        match_type: 'simple',
+        value: 'https://example.com/',
+      },
+    });
+    console.log('Created page:', newPage);
+    return newPage;
+  } catch (error) {
+    console.error('Failed to create page:', error);
+  }
+}
+
+/**
+ * Example 13: Get a specific page
+ */
+async function getPage(pageId: string) {
+  try {
+    const page = await client.pages.get(pageId);
+    console.log('Page details:', page);
+    return page;
+  } catch (error) {
+    console.error('Failed to get page:', error);
+  }
+}
+
+/**
+ * Example 14: Update a page
+ */
+async function updatePage(pageId: string) {
+  try {
+    const updatedPage = await client.pages.update(pageId, {
+      name: 'Updated Homepage',
+      description: 'Updated landing page description',
+    });
+    console.log('Updated page:', updatedPage);
+    return updatedPage;
+  } catch (error) {
+    console.error('Failed to update page:', error);
+  }
+}
+
+/**
+ * Example 15: Archive a page
+ */
+async function archivePage(pageId: string) {
+  try {
+    const archivedPage = await client.pages.archive(pageId);
+    console.log('Archived page:', archivedPage);
+    return archivedPage;
+  } catch (error) {
+    console.error('Failed to archive page:', error);
+  }
+}
+
+/**
+ * Example 16: Make a custom API request
  */
 async function customRequest() {
   try {
@@ -186,7 +265,7 @@ async function customRequest() {
 }
 
 /**
- * Example 12: Error handling with different error types
+ * Example 17: Error handling with different error types
  */
 async function errorHandlingExample() {
   try {
@@ -235,6 +314,11 @@ export {
   startExperiment,
   listAudiences,
   createAudience,
+  listPages,
+  createPage,
+  getPage,
+  updatePage,
+  archivePage,
   customRequest,
   errorHandlingExample,
 };

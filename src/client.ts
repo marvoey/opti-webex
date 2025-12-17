@@ -7,6 +7,7 @@ import { HttpClient } from './http-client';
 import { Projects } from './resources/projects';
 import { Experiments } from './resources/experiments';
 import { Audiences } from './resources/audiences';
+import { Pages } from './resources/pages';
 
 /**
  * Optimizely Web Experimentation API Client
@@ -39,6 +40,9 @@ export class OptimizelyClient {
   /** Audiences API resource */
   public readonly audiences: Audiences;
 
+  /** Pages API resource */
+  public readonly pages: Pages;
+
   /**
    * Create a new Optimizely client
    * @param config - Client configuration
@@ -50,6 +54,7 @@ export class OptimizelyClient {
     this.projects = new Projects(this.httpClient);
     this.experiments = new Experiments(this.httpClient);
     this.audiences = new Audiences(this.httpClient);
+    this.pages = new Pages(this.httpClient);
   }
 
   /**
