@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "TypeScript/JavaScript wrapper for the Optimizely Web Experimentation REST API",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -67,5 +67,6 @@
   ],
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "packageManager": "yarn@4.12.0"
 }
