@@ -17,7 +17,7 @@ export class Audiences {
     if (!projectId) {
       throw new Error('Project ID is required');
     }
-    return this.httpClient.get<Audience[]>(`/projects/${projectId}/audiences`);
+    return this.httpClient.get<Audience[]>(`/audiences?project_id=${projectId}&archived=false`);
   }
 
   /**

@@ -2,8 +2,8 @@
  * Pages resource for Optimizely API
  */
 
-import { HttpClient } from '../http-client';
-import { Page } from '../types';
+import { HttpClient } from "../http-client";
+import { Page } from "../types";
 
 export class Pages {
   constructor(private readonly httpClient: HttpClient) {}
@@ -15,9 +15,11 @@ export class Pages {
    */
   async list(projectId: string): Promise<Page[]> {
     if (!projectId) {
-      throw new Error('Project ID is required');
+      throw new Error("Project ID is required");
     }
-    return this.httpClient.get<Page[]>(`/pages`, { project_id: Number(projectId) });
+    return this.httpClient.get<Page[]>(
+      `/pages?project_id=${projectId}&archived=false`
+    );
   }
 
   /**
@@ -27,7 +29,7 @@ export class Pages {
    */
   async get(pageId: string): Promise<Page> {
     if (!pageId) {
-      throw new Error('Page ID is required');
+      throw new Error("Page ID is required");
     }
     return this.httpClient.get<Page>(`/pages/${Number(pageId)}`);
   }
@@ -44,16 +46,16 @@ export class Pages {
       name: string;
       description?: string;
       edit_url: string;
-      page_type: 'single_url' | 'url_set' | 'global';
+      page_type: "single_url" | "url_set" | "global";
       category?: string;
       conditions: any;
     }
   ): Promise<Page> {
     if (!projectId) {
-      throw new Error('Project ID is required');
+      throw new Error("Project ID is required");
     }
     if (!data.name) {
-      throw new Error('Page name is required');
+      throw new Error("Page name is required");
     }
     return this.httpClient.post<Page>(`/pages`, {
       ...data,
@@ -80,7 +82,7 @@ export class Pages {
     }>
   ): Promise<Page> {
     if (!pageId) {
-      throw new Error('Page ID is required');
+      throw new Error("Page ID is required");
     }
     return this.httpClient.patch<Page>(`/pages/${Number(pageId)}`, data);
   }
@@ -100,7 +102,7 @@ export class Pages {
    */
   async delete(pageId: string): Promise<void> {
     if (!pageId) {
-      throw new Error('Page ID is required');
+      throw new Error("Page ID is required");
     }
     await this.httpClient.delete(`/pages/${Number(pageId)}`);
   }

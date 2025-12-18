@@ -14,6 +14,7 @@ export type {
   Variation,
   Audience,
   Page,
+  Campaign,
   ListResponse,
   HttpMethod,
   RequestOptions,
@@ -37,3 +38,4 @@ export { Projects } from './resources/projects';
 export { Experiments } from './resources/experiments';
 export { Audiences } from './resources/audiences';
 export { Pages } from './resources/pages';
+export { Campaigns } from './resources/campaigns';

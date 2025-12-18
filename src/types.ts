@@ -97,6 +97,24 @@ export interface Page {
 }
 
 /**
+ * Campaign resource
+ */
+export interface Campaign {
+  id: string;
+  project_id: string;
+  name: string;
+  description?: string;
+  status: 'active' | 'paused' | 'archived' | 'not_started';
+  type?: string;
+  changes?: any[];
+  experiments?: any[];
+  metrics?: any[];
+  holdback?: number;
+  created?: string;
+  last_modified?: string;
+}
+
+/**
  * HTTP method types
  */
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
